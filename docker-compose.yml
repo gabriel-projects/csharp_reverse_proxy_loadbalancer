@@ -1,0 +1,16 @@
+services:
+  api.grrinnovations.reverseproxy.loadbalancer:
+    image: ${DOCKER_REGISTRY-}apigrrinnovationsreverseproxyloadbalancer
+    build:
+      context: .
+      dockerfile: Api.GRRInnovations.ReverseProxy.Loadbalancer/Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_URLS=http://+:8080
+      - InstanceName=API_1 
+  redis:
+    image: redis:7
+    container_name: redis
+    ports:
+      - "6379:6379"
