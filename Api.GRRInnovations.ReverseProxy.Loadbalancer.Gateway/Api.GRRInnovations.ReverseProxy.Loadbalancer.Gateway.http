@@ -1,0 +1,6 @@
+@Api.GRRInnovations.ReverseProxy.Loadbalancer.Gateway_HostAddress = http://localhost:5141
+
+GET {{Api.GRRInnovations.ReverseProxy.Loadbalancer.Gateway_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
